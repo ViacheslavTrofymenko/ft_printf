@@ -38,25 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-/*
-int main()
-{
-	char	s1[] = "Hello ";
-	char	s2[] = "Madrid!!!";
-	char	*res = ft_strjoin(s1, s2);
-	int		i = 0;
-
-	if (res)
-	{
-		printf("Pointer = %p\n", res);
-		while (res[i] != '\0')
-		{
-			printf("%c", res[i]);
-			i++;
-		}
-		printf("\n");
-		free(res);
-	}
-	return (0);
-}
-*/

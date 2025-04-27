@@ -14,10 +14,12 @@
 
 int	ft_putnbr_int(int nb)
 {
-	long int	count;
+	int	count;
 
 	ft_putnbr_fd(nb, 1);
 	count = 0;
+	if (nb == -2147483648)
+		return (11);
 	if (nb < 0)
 	{
 		count++;

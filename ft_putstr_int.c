@@ -15,10 +15,7 @@
 int	ft_putstr_int(char *str)
 {
 	if (str == NULL)
-		{
-			ft_strlen(*str);
-			return (6);
-		}
+		return (write(1, "(null)", 6));
 	ft_putstr_fd(str, 1);
-	return (ft_strlen(*str));
+	return (ft_strlen(str));
 }

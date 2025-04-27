@@ -18,13 +18,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-/*
-int	main(void)
-{
-	printf("Lib function result = %d\n", toupper(97));
-	printf("Lib function result = %d\n", toupper(96));
-	printf("Custom function result = %d\n", ft_toupper(97));
-	printf("Custom function result = %d\n", ft_toupper(96));
-	return (0);
-}
-*/

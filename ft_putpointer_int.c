@@ -12,12 +12,27 @@
 
 #include "ft_printf.h"
 
-int	ft_putpointer_int(char *str)
+static int	ft_print_pointer(unsigned long n)
 {
-	int	count;
+	int		count;
+	char	*hex;
 
-	count = ft_putstr_int("0x");
-	count += ft_putstr_int(str);
+	count = 0;
+	hex = "0123456789abcdef";
+	if (n >= 16)
+		count += ft_print_pointer(n / 16);
+	count += ft_putchar_int(hex[n % 16]);
 	return (count);
 }
 
+int	ft_putpointer_int(void *p)
+{
+	int	count;
+
+	if (!p)
+		return (ft_putstr_int("(nil)"));
+	count = 0;
+	count += ft_putstr_int("0x");
+	count += ft_print_pointer((unsigned long)p);
+	return (count);
+}

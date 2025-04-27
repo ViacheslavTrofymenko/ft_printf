@@ -77,23 +77,3 @@ char	*ft_itoa(int n)
 	res_len = ft_num_of_digits(n);
 	return (ft_convert_to_string(n, res_len));
 }
-/*
-int main(int argc, char *argv[])
-{
-	if (argc == 2)
-	{
-		char	*str = ft_itoa(atoi(argv[1]));
-		int		i = 0;
-		if (str)
-		{
-			while (str[i] != '\0')
-			{
-				printf("%c", str[i]);
-				i++;
-			}
-			free(str);
-		}
-	}
-	return (0);
-}
-*/

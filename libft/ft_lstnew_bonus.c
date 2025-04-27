@@ -23,19 +23,3 @@ t_list	*ft_lstnew(void *content)
 	node->next = NULL;
 	return (node);
 }
-/*
-int main(void)
-{
-	char *str = "Hello Madrid!";
-	t_list *node = ft_lstnew(str);
-
-	if (node)
-	{
-		printf("Content: %s\n", (char *)node->content);
-		printf("Next: %p\n", (void *)node->next);
-	}
-
-	free(node);
-	return (0);
-}
-*/

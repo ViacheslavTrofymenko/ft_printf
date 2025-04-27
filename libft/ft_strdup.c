@@ -31,22 +31,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-/*
-int	main()
-{
-	char	*dest;
-	int		len = 0;
-	int		i = 0;
-	char	*src = "Hello Madrid";
-
-	dest = ft_strdup(src);
-	printf("Result1 = %p\n", dest);
-	while (i < 12)
-	{
-		printf("Result = %c\n", dest[i]);
-		i++;
-	}
-	free(dest);
-	return (0);
-}
-*/

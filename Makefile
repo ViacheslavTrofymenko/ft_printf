@@ -17,7 +17,13 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_printf.c \
-		ft_placeholder_scanner.c \
+		ft_parse_string.c \
+		ft_putchar_int.c \
+		ft_putnbr_int.c \
+		ft_putpointer_int.c \
+		ft_putstr_int.c \
+		ft_put_unsigned_int.c \
+		ft_put_hex.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -25,16 +31,22 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 all: $(LIBFT) $(NAME)
 
-$(LIBFT):
-	make bonus -C $(LIBFT_PATH)
+${LIBFT}:
+		@echo
+		make bonus -C libft
+		cp ${LIBFT} ${NAME}
 
 $(NAME): $(OBJS) $(LIBFT)
-	@ar rcs $(NAME) $(OBJS) $(LIBFT)
+	ar -rcs ${NAME} ${OBJS}
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean object files
 clean:
 	make clean -C $(LIBFT_PATH)
 	@rm -rf $(OBJS)
+	@rm -rf $(LIBFT)
 
 # Remove all generated files
 fclean: clean

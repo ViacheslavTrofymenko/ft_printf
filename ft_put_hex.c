@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_put_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 12:25:01 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/04/14 12:25:05 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/27 12:11:17 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/27 12:11:19 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_put_hex(unsigned int n, char *hex)
 {
 	int	count;
 
 	count = 0;
-	while (lst)
-	{
-		count++;
-		lst = lst->next;
-	}
+	if (n >= 16)
+		count += ft_put_hex(n / 16, hex);
+	count += ft_putchar_int(hex[n % 16]);
 	return (count);
 }

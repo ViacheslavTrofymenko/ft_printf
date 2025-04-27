@@ -1,39 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_put_unsigned_int.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 11:07:39 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/04/25 11:07:41 by vtrofyme         ###   ########.fr       */
+/*   Created: 2025/04/27 11:53:11 by vtrofyme          #+#    #+#             */
+/*   Updated: 2025/04/27 11:53:13 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_put_unsigned_int(unsigned int n)
 {
-	va_list	ap;
-	int		chars_count;
-	int		i;
+	int		count;
 
-	i = 0;
-	va_start(ap, str);
-	chars_count = 0;
-	if (str == NULL)
-		return (-1);
-	while (str[i])
+	printout(n);
+	count = 1;
+	while (n > 9)
 	{
-		if (str[i] == '%')
-		{
-			chars_count += ft_parse_string(str[i + 1], &ap);
-			i++;
-		}
-		else
-			chars_count += ft_putchar_int(str[i]);
+		n = n / 10;
+		count++;
+	}
+	return (count);
+}
+
+
+static void	printout(unsigned int nb)
+{
+	if (nb > 9)
+		print_unsigned(nb / 10);
+	if (nb <= 9)
+	{
+		ft_putchar_fd(nb + 48, 1);
+		return ;
+	}
+	ft_putchar_fd((nb % 10) + 48, 1);
+}
+
+int	print_unsigned(unsigned int nb)
+{
+	unsigned int	i;
+
+	printout(nb);
+	i = 1;
+	while (nb > 9)
+	{
+		nb = nb / 10;
 		i++;
 	}
-	va_end(ap);
-	return (chars_count);
+	return (i);
 }

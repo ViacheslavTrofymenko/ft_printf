@@ -27,13 +27,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
-int main(void)
-{
-	char str[30] = "Memset example";
-	printf("Normal String = %s\n", str);
-	memset(str, '!', 5);
-	printf("String after memset = %s\n", str);
-	return (0);
-}
-*/

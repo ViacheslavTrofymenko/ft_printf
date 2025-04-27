@@ -80,22 +80,3 @@ char	**ft_split(char const *s, char c)
 	res[i] = NULL;
 	return (res);
 }
-/*
-int main(int argc, char *argv[])
-{
-	if (argc == 3)
-	{
-		char delimiter = argv[2][0];
-		char **result = ft_split(argv[1], delimiter);
-		if (result)
-		{
-		for (int i = 0; result[i] != NULL; i++)
-			printf("Result of string %d: %s\n", i, result[i]);
-			for (int i = 0; result[i] != NULL; i++)
-				free(result[i]);
-			free(result);
-		}
-	}
-	return (0);
-}
-*/

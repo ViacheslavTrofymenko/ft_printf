@@ -40,16 +40,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int main(void)
-{
-	char target[21] = "shiny white triangle";
-	char *p = target;
-	char *source = target + 6;
-
-	printf("Before memmove, target is \"%s\"\n", target);
-	ft_memmove(p, source, 6);
-	printf("After memmove, target becomes \"%s\"\n", target);
-	return (0);
-}
-*/

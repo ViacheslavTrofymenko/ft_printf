@@ -47,24 +47,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res[i] = '\0';
 	return (res);
 }
-/*
-int	main()
-{
-	char	str[] = "Hello Madrid Madrid Badrid";
-	char	*res = ft_strtrim(str, "rid");
-	int		i = 0;
-
-	if (res)
-	{
-		printf("Pointer = %p\n", res);
-		while (res[i] != '\0')
-		{
-			printf("%c", res[i]);
-			i++;
-		}
-		printf("\n");
-		free(res);
-	}
-	return (0);
-}
-*/
