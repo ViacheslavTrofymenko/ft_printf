@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_unsigned_int.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viacheslav <viacheslav@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vtrofyme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 11:53:11 by vtrofyme          #+#    #+#             */
-/*   Updated: 2025/04/27 21:36:02 by viacheslav       ###   ########.fr       */
+/*   Updated: 2025/04/27 11:53:13 by vtrofyme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static void	ft_print_unsigned(unsigned int nbr)
 
 int	ft_put_unsigned_int(unsigned int nbr)
 {
-	int count;
+	int	count;
 
 	count = 1;
+	ft_print_unsigned(nbr);
 	while (nbr > 9)
 	{
 		nbr = nbr / 10;
 		count++;
 	}
-	ft_print_unsigned(nbr);
 	return (count);
 }
